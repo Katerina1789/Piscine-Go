@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1tp --ignore=".*" | tr '\n' ','
+ls -1tp --ignore=".*" | tr '\n' ',' | sed 's/,$/\n/'
