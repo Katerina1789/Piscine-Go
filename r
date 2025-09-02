@@ -1,2 +1,3 @@
 #!bin/bash
-R (\n)
+R           
+  
