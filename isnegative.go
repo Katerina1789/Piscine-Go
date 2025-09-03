@@ -1,11 +1,11 @@
 package piscine
 
-import "github.com/01-edu/z01"
+import "os"
 
 func IsNegative(nb int) {
 	if nb >= 0 {
-		z01.PrintRune('F')
+		os.Stdout.Write([]byte("F\n"))
 	} else {
-		z01.PrintRune('T')
+		os.Stdout.Write([]byte("T\n"))
 	}
 }
