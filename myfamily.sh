@@ -1,1 +1,1 @@
-curl -s https://platform.zone01.gr/assets/superhero/all.json | jq -r \ --argson/0 id "$HERO_ID" ' .[] | select(.id == $id) | .relatives ' | tr '\n' '; ' | sed 's/; $/\n/'
+curl -s https://platform.zone01.gr/assets/superhero/all.json | jq ".[] | select(.id == $HERO_ID) | .connections.relatives" | tr -d '"'
