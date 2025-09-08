@@ -9,7 +9,7 @@ func RecursiveFactorial(nb int) int {
 	}
 	result := nb * RecursiveFactorial(nb-1)
 	if nb > 1 && nb < 21 {
-		return 0
+		return result
 	}
 	if result < 0 {
 		return 0
