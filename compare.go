@@ -5,7 +5,7 @@ func Compare(a, b string) int {
 	if len(b) < minLen {
 		minLen = len(b)
 	}
-	for i := 1; i <= minLen; i++ {
+	for i := 0; i < minLen; i++ {
 		if a[i] < b[i] {
 			return -1
 		} else if a[i] > b[i] {
