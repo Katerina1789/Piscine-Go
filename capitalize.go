@@ -8,18 +8,17 @@ func Capitalize(s string) string {
 		if (runes[i] >= 'a' && runes[i] <= 'z') || (runes[i] >= 'A' && runes[i] <= 'Z') || (runes[i] >= '0' && runes[i] <= '9') {
 			if newWord {
 				if runes[i] >= 'a' && runes[i] <= 'z' {
-					runes[i] = -32
-				} else if !newWord {
-					if runes[i] >= 'A' && runes[i] <= 'Z' {
-						runes[i] += 32
-					}
+					runes[i] -= 32
 				}
+				newWord = false
 			} else {
-				newWord = true
+				if runes[i] >= 'A' && runes[i] <= 'Z' {
+					runes[i] += 32
+				}
 			}
+		} else {
+			newWord = true
 		}
 	}
-
 	return string(runes)
-
 }
