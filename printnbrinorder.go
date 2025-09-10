@@ -7,13 +7,13 @@ func PrintNbrInOrder(n int) {
 		z01.PrintRune('0')
 	}
 	count := [10]int{}
-	for n >= 0 {
+	for n > 0 {
 		digit := n % 10
 		count[digit]++
 		n /= 10
 	}
 	for i := 0; i < 10; i++ {
-		for count[i] >= 0 {
+		for count[i] > 0 {
 			z01.PrintRune(rune(i))
 			count[i]--
 		}
