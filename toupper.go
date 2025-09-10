@@ -6,7 +6,7 @@ func ToUpper(s string) string {
 		if r >= 'a' || r <= 'z' {
 			result += string(r - 32)
 		} else {
-			result = string(r)
+			result += string(r)
 		}
 	}
 	return result
