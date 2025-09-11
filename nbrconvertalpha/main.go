@@ -25,6 +25,7 @@ func main() {
 			}
 			n = n*10 + int(ch-'0')
 		}
+		z01.PrintRune('\n')
 
 		if n >= 1 && n <= 26 {
 			letter := 'a' + rune(n-1)
