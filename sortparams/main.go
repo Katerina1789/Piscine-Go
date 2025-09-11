@@ -9,7 +9,7 @@ import (
 func main() {
 	argument := os.Args
 	for i := 1; i < len(argument); i++ {
-		for j := i + 1; j < len(argument); j++ {
+		for j := i + 1; j < len(argument)-1; j++ {
 			if argument[i] > argument[j] {
 				argument[i], argument[j] = argument[j], argument[i]
 			}
