@@ -15,9 +15,12 @@ func main() {
 		argument = argument[1:]
 	}
 
+	if len(argument) == 0 {
+		return
+	}
+
 	for _, i := range argument {
 		n := 0
-
 		for _, ch := range i {
 			if ch < '0' || ch > '9' {
 				n = 0
