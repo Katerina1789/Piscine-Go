@@ -14,8 +14,8 @@ func main() {
 			slash = i + 1
 		}
 	}
-	for i := slash; i < len(name); i++ {
-		z01.PrintRune(rune(name[i]))
+	for _, ch := range name[slash:] {
+		z01.PrintRune(ch)
 	}
 	z01.PrintRune('\n')
 }
