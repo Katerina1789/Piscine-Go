@@ -35,6 +35,5 @@ func main() {
 		} else {
 			z01.PrintRune(' ')
 		}
-		z01.PrintRune('\n')
 	}
 }
