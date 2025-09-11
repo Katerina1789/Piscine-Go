@@ -8,9 +8,9 @@ import (
 
 func main() {
 	argument := os.Args[1:]
-	upper := true
+	upper := false
 
-	if len(argument) > 0 && argument[1] == "--upper" {
+	if len(argument) > 0 && argument[0] == "--upper" {
 		upper = true
 		argument = argument[1:]
 	}
