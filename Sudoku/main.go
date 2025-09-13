@@ -1,11 +1,9 @@
 package main // Declares the main package — the entry point of the program
 
-import (
-	"os"
-)
+import "os" // Imports the os package to access command-line arguments
 
 func main() { // Main function where execution begins
-	if len(os.Args) != 10 {
+	if len(os.Args) != 10 { // Expecting 9 rows + program name = 10 arguments
 		printError("Error: Invalid number of arguments") // If not, print an error message
 		return                                           // Stops execution
 	}
