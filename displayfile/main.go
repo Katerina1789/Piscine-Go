@@ -23,6 +23,10 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	defer file.Close()
 
 	_, err = io.Copy(os.Stdout, file)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
