@@ -14,10 +14,10 @@ func printStr(s string) {
 }
 
 func isEven(nbr int) bool {
-	if nbr%2 == 1 {
-		return false // if there is a remainder it returns false meaning it is an odd number
+	if nbr%2 == 0 {
+		return true // if there is a remainder it returns false meaning it is an odd number
 	} else {
-		return true // if the remainder is 0 it returns true meaning it is an even number
+		return false // if the remainder is 0 it returns true meaning it is an even number
 	}
 }
 
