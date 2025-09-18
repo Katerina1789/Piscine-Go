@@ -3,36 +3,39 @@ package piscine
 func ShoppingSummaryCounter(str string) map[string]int {
 	result := make(map[string]int)
 	word := ""
-	extraSpaces := 0
-	if str == "  " {
-		result[" "] = 2
-		return result
-	}
+	spaceCount := 0
+
 	for i := 0; i < len(str); i++ {
 		c := str[i]
 
-		// if we see a space
 		if c == ' ' {
-			// only add if word is not empty
-			if i > 0 && str[i-1] == ' ' {
-				extraSpaces++
-			}
+			// Αν υπάρχει ήδη λέξη, την αποθηκεύουμε και ξεκινάμε νέα
 			if word != "" {
 				result[word]++
 				word = ""
+			} else {
+				// Διαδοχικά ή αρχικά κενά -> μετράμε ως extra spaces
+				spaceCount++
 			}
-			// if word is empty, we just skip (this ignores multiple spaces)
 		} else {
+			// Αν υπήρχαν spaces πριν από γράμμα, τα καταχωρούμε πρώτα
+			if spaceCount > 0 {
+				result[""] += spaceCount
+				spaceCount = 0
+			}
 			word += string(c)
 		}
 	}
 
-	// handle last word if it exists
+	// Αν τελειώνει με λέξη
 	if word != "" {
 		result[word]++
 	}
-	if extraSpaces > 0 {
-		result[""] = extraSpaces
+
+	// Αν τελειώνει με spaces
+	if spaceCount > 0 {
+		result[""] += spaceCount
 	}
+
 	return result
 }
