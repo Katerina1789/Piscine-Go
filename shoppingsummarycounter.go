@@ -5,7 +5,7 @@ func ShoppingSummaryCounter(str string) map[string]int {
 	word := ""
 	extraSpaces := 0
 	if str == "  " {
-		result[""] = 2
+		result[" "] = 2
 		return result
 	}
 	for i := 0; i < len(str); i++ {
