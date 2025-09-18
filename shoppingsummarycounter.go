@@ -1,4 +1,4 @@
-package student
+package piscine
 
 func ShoppingSummaryCounter(str string) map[string]int {
 	items := []string{}
