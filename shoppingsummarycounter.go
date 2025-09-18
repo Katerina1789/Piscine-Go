@@ -29,7 +29,7 @@ func ShoppingSummaryCounter(str string) map[string]int {
 		result[word]++
 	}
 	if extraSpaces > 0 {
-		result[""] = extraSpaces
+		result[word] = extraSpaces
 	}
 	return result
 }
