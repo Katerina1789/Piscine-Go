@@ -13,7 +13,7 @@ func DealAPackOfCards(deck []int) {
 	for i := 0; i < players; i++ {
 		fmt.Printf("Player %d: ", i+1)
 		for j := 0; j < cardsPerPlayer; j++ {
-			card := deck[i*cardsPerPlayer]
+			card := deck[i*cardsPerPlayer+j]
 			if j < cardsPerPlayer-1 {
 				fmt.Printf("%d, ", card)
 			} else {
