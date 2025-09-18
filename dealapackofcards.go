@@ -6,10 +6,10 @@ func DealAPackOfCards(deck []int) {
 	for i := 0; i < 3; i++ {
 		for j := i; j <= len(deck); j++ {
 			if j != i {
-				fmt.Print(", ")
+				fmt.Printf(", ")
 			}
-			fmt.Print(deck[j])
+			fmt.Printf("%d", deck[j])
 		}
-		fmt.Print("\n")
+		fmt.Println()
 	}
 }
