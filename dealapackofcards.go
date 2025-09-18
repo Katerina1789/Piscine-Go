@@ -3,12 +3,22 @@ package piscine
 import "fmt"
 
 func DealAPackOfCards(deck []int) {
-	for i := 0; i < 3; i++ {
-		for j := i; j <= 12; j++ {
-			if j != i {
-				fmt.Printf(", ")
+	count := 0
+	for range deck {
+		count++
+	}
+	players := 4
+	cardsPerPlayer := count / players
+
+	for i := 0; i < players; i++ {
+		fmt.Printf("Player %d: ", i+1)
+		for j := 0; j < cardsPerPlayer; j++ {
+			card := deck[i*cardsPerPlayer]
+			if j < cardsPerPlayer-1 {
+				fmt.Printf("%d, ", card)
+			} else {
+				fmt.Printf("%d", card)
 			}
-			fmt.Printf("%d", deck[j])
 		}
 		fmt.Printf("\n")
 	}
