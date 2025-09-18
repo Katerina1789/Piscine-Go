@@ -4,12 +4,12 @@ import "fmt"
 
 func DealAPackOfCards(deck []int) {
 	for i := 0; i < 3; i++ {
-		for j := i; j <= len(deck); j++ {
+		for j := i; j <= 12; j++ {
 			if j != i {
 				fmt.Printf(", ")
 			}
 			fmt.Printf("%d", deck[j])
 		}
-		fmt.Println()
+		fmt.Printf("\n")
 	}
 }
