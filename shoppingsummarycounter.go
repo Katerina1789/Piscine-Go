@@ -4,14 +4,13 @@ func ShoppingSummaryCounter(str string) map[string]int {
 	result := make(map[string]int)
 
 	word := ""
-	spaceRun := 0    // length of current consecutive spaces
-	sawWord := false // have we completed at least one word yet?
+	spaceRun := 0
+	sawWord := false
 
 	for i := 0; i < len(str); i++ {
 		c := str[i]
 
 		if c == ' ' {
-			// finalize a word if we were building one
 			if word != "" {
 				result[word]++
 				word = ""
@@ -19,31 +18,30 @@ func ShoppingSummaryCounter(str string) map[string]int {
 			}
 			spaceRun++
 		} else {
-			// we’re entering a word after some spaces: account for spaces first
 			if spaceRun > 0 {
 				if sawWord {
-					// between words: only count the extras beyond the first separator
 					if spaceRun > 1 {
 						result[""] += spaceRun - 1
 					}
 				} else {
-					// leading spaces: count them all
 					result[""] += spaceRun
 				}
 				spaceRun = 0
 			}
-			// build the current word
 			word += string(c)
 		}
 	}
 
-	// finalize last word
 	if word != "" {
 		result[word]++
 	}
 
-	// trailing spaces: count them all
-	if spaceRun > 0 {
+	// εδώ το fix:
+	if !sawWord && word == "" && len(str) > 0 {
+		// string έχει μόνο spaces → μέτρησέ τα όλα
+		result[""] = len(str)
+	} else if spaceRun > 0 {
+		// trailing spaces μετά από λέξη
 		result[""] += spaceRun
 	}
 
