@@ -1,33 +1,46 @@
 package piscine
 
 func LoafOfBread(str string) string {
-	result := ""
-	word := ""
-	count := 0
-	skip := false
+	rs := []rune(str)
+	var segments []string
+	chunk := make([]rune, 0, 5)
+	nonSpaceTotal := 0
 
-	for _, r := range str {
-		if r == ' ' {
-			// Preserve spaces in output
-			word += string(r)
-			continue
+	i := 0
+	for i < len(rs) {
+		r := rs[i]
+
+		// Count only non-space characters, do not include spaces in output
+		if r != ' ' {
+			chunk = append(chunk, r)
+			nonSpaceTotal++
+
+			// When we reach 5 non-space chars, emit the chunk and skip next character (any)
+			if len(chunk) == 5 {
+				segments = append(segments, string(chunk))
+				chunk = chunk[:0]
+				if i+1 < len(rs) {
+					i++ // skip the next character in the original stream (space or not)
+				}
+			}
 		}
-		if skip {
-			skip = false
-			continue // skip this non-space character
-		}
-		word += string(r)
-		count++
-		if count == 5 {
-			result += word + " "
-			word = ""
-			count = 0
-			skip = true // skip next non-space character
-		}
+		i++
 	}
 
-	if result == "" {
+	if nonSpaceTotal < 5 {
 		return "Invalid Output\n"
 	}
-	return result[:len(result)-1] + "\n" // remove trailing space and add newline
+	if len(chunk) > 0 {
+		segments = append(segments, string(chunk))
+	}
+
+	// Join chunks with a single space and add newline
+	out := ""
+	for idx, s := range segments {
+		if idx > 0 {
+			out += " "
+		}
+		out += s
+	}
+	return out + "\n"
 }
