@@ -3,21 +3,21 @@ package piscine
 import "github.com/01-edu/z01"
 
 func DescendComb() {
-	var result string
 	for i := 99; i >= 0; i-- {
 		for j := i - 1; j >= 0; j-- {
-			result += twoDigit(i) + " " + twoDigit(j)
+			printTwoDigit(i)
+			z01.PrintRune(' ')
+			printTwoDigit(j)
 			if !(i == 1 && j == 0) {
-				result += ", "
+				z01.PrintRune(',')
+				z01.PrintRune(' ')
 			}
 		}
-	}
-	for _, r := range result {
-		z01.PrintRune(r)
 	}
 	z01.PrintRune('\n')
 }
 
-func twoDigit(n int) string {
-	return string(rune(n/10+'0')) + string(rune(n%10+'0'))
+func printTwoDigit(n int) {
+	z01.PrintRune(rune(n/10 + '0'))
+	z01.PrintRune(rune(n%10 + '0'))
 }
