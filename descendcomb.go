@@ -1,23 +1,19 @@
 package piscine
 
-import (
-	"github.com/01-edu/z01"
-)
-
-func printStr(s string) {
-	for _, r := range s {
-		z01.PrintRune(r)
-	}
-}
+import "github.com/01-edu/z01"
 
 func DescendComb() {
+	var result string
 	for i := 99; i >= 0; i-- {
 		for j := i - 1; j >= 0; j-- {
-			printStr(twoDigit(i) + " " + twoDigit(j))
+			result += twoDigit(i) + " " + twoDigit(j)
 			if !(i == 1 && j == 0) {
-				printStr(", ")
+				result += ", "
 			}
 		}
+	}
+	for _, r := range result {
+		z01.PrintRune(r)
 	}
 	z01.PrintRune('\n')
 }
