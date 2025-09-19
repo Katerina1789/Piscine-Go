@@ -13,7 +13,7 @@ func DescendComb() {
 			printNumber(i)
 			z01.PrintRune(' ')
 			printNumber(j)
-			if !(i == 1 && j == 0) {
+			if !(i == 1 && j == 0) { // last pair is "01 00"
 				z01.PrintRune(',')
 				z01.PrintRune(' ')
 			}
