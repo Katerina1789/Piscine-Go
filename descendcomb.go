@@ -1,23 +1,27 @@
 package piscine
 
-import "github.com/01-edu/z01"
+import (
+	"github.com/01-edu/z01"
+)
 
-func printNumber(n int) {
-	z01.PrintRune(rune(n/10 + '0'))
-	z01.PrintRune(rune(n%10 + '0'))
+func printStr(s string) {
+	for _, r := range s {
+		z01.PrintRune(r)
+	}
 }
 
 func DescendComb() {
-	for i := 99; i >= 10; i-- {
-		for j := i - 1; j >= 10; j-- {
-			printNumber(i)
-			z01.PrintRune(' ')
-			printNumber(j)
-			if !(i == 11 && j == 10) { // last pair is "11 10"
-				z01.PrintRune(',')
-				z01.PrintRune(' ')
+	for i := 99; i >= 0; i-- {
+		for j := i - 1; j >= 0; j-- {
+			printStr(twoDigit(i) + " " + twoDigit(j))
+			if !(i == 1 && j == 0) {
+				printStr(", ")
 			}
 		}
 	}
 	z01.PrintRune('\n')
+}
+
+func twoDigit(n int) string {
+	return string(rune(n/10+'0')) + string(rune(n%10+'0'))
 }
