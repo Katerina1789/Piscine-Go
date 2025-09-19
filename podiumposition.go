@@ -1,10 +1,12 @@
 package piscine
 
 func PodiumPosition(podium [][]string) [][]string {
-	nbr := len(podium)
-	result := make([][]string, nbr)
-	for i := 0; i < nbr; i++ {
-		result[i] = podium[nbr-1-i]
+	if len(podium) == 3 {
+		return [][]string{podium[2], podium[1], podium[0]}
+	} else if len(podium) == 2 {
+		return [][]string{podium[1], podium[0]}
+	} else if len(podium) == 1 {
+		return [][]string{podium[0]}
 	}
-	return result
+	return [][]string{}
 }
