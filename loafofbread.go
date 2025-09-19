@@ -10,23 +10,24 @@ func LoafOfBread(str string) string {
 	for i < len(rs) {
 		r := rs[i]
 
-		// Count only non-space characters, do not include spaces in output
 		if r != ' ' {
 			chunk = append(chunk, r)
 			nonSpaceTotal++
 
-			// When we reach 5 non-space chars, emit the chunk and skip next character (any)
 			if len(chunk) == 5 {
 				segments = append(segments, string(chunk))
 				chunk = chunk[:0]
 				if i+1 < len(rs) {
-					i++ // skip the next character in the original stream (space or not)
+					i++ // skip next character
 				}
 			}
 		}
 		i++
 	}
 
+	if nonSpaceTotal == 0 {
+		return "\n"
+	}
 	if nonSpaceTotal < 5 {
 		return "Invalid Output\n"
 	}
@@ -34,7 +35,6 @@ func LoafOfBread(str string) string {
 		segments = append(segments, string(chunk))
 	}
 
-	// Join chunks with a single space and add newline
 	out := ""
 	for idx, s := range segments {
 		if idx > 0 {
