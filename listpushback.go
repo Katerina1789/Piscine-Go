@@ -1,13 +1,13 @@
 package piscine // Defines the package name
 
 // NodeL represents a single element in the linked list
-type Nodel struct {
+type NodeL1 struct {
 	Data interface{} // Holds any type of data (string, int, etc.)
 	Next *NodeL      // Pointer to the next node in the list (nil if it's the last)
 }
 
 // List represents the linked list itself, with pointers to the first and last nodes
-type Lis struct {
+type List1 struct {
 	Head *NodeL // Points to the first node in the list
 	Tail *NodeL // Points to the last node in the list
 }
