@@ -1,17 +1,17 @@
 package piscine
 
-type NodeL struct {
+type NodeL7 struct {
 	Data interface{} // Holds the value
 	Next *NodeL      // Points to the next node
 }
 
-type List struct {
+type List7 struct {
 	Head *NodeL // First node in the list
 	Tail *NodeL // Last node in the list
 }
 
 // ListReverse reverses the order of nodes in the linked list
-func ListReverse(l *List) {
+func ListReverse(l *List7) {
 	var prev *NodeL   // Will point to the previous node
 	current := l.Head // Start from the head
 	l.Tail = l.Head   // After reversal, the old head becomes the new tail
