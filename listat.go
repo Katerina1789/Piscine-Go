@@ -1,8 +1,13 @@
 package piscine
 
 type NodeL struct {
-	Data interface{} // Holds the value
-	Next *NodeL      // Points to the next node
+	Data interface{}
+	Next *NodeL
+}
+
+type List struct {
+	Head *NodeL
+	Tail *NodeL
 }
 
 // ListAt returns the node at position pos in the list, or nil if out of bounds
