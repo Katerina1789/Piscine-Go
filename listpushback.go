@@ -13,7 +13,7 @@ type List1 struct {
 }
 
 // ListPushBack adds a new node with the given data to the end of the list
-func ListPushBack(l *List, data interface{}) {
+func ListPushBack(l *List1, data interface{}) {
 	// Create a new node with the provided data
 	newNode := &NodeL{Data: data}
 

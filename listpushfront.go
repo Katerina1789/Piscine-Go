@@ -13,7 +13,7 @@ type List2 struct {
 }
 
 // ListPushFront inserts a new node at the beginning of the list
-func ListPushFront(l *List, data interface{}) {
+func ListPushFront(l *List2, data interface{}) {
 	newNode := &NodeL{Data: data} // Create a new node with the given data
 
 	newNode.Next = l.Head // Link the new node to the current head

@@ -11,7 +11,7 @@ type List4 struct {
 }
 
 // ListLast returns the data of the last node in the list
-func ListLast(l *List) interface{} {
+func ListLast(l *List4) interface{} {
 	if l.Tail == nil {
 		return nil // If the list is empty, return nil
 	} else {

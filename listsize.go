@@ -11,7 +11,7 @@ type List3 struct {
 }
 
 // ListSize returns the number of nodes in the linked list
-func ListSize(l *List) int {
+func ListSize(l *List3) int {
 	count := 0        // Start with zero
 	current := l.Head // Begin at the head of the list
 
