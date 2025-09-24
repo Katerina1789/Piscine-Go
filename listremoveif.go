@@ -1,11 +1,11 @@
 package piscine
 
-type NodeL struct {
+type NodL struct {
 	Data interface{} // Holds any type of value
 	Next *NodeL      // Points to the next node
 }
 
-type List struct {
+type Lit struct {
 	Head *NodeL // First node in the list
 	Tail *NodeL // Last node in the list
 }
