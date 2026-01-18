@@ -1,4 +1,4 @@
-package piscine // Defines the package name; "main" means this is an executable program
+package main // Defines the package name; "main" means this is an executable program
 
 import (
 	"fmt" // Provides functions for formatted I/O (printing to the terminal)
