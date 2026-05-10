@@ -1,5 +1,5 @@
 # Piscine Go
-[![Zone01](https://img.shields.io/badge/Zone01-Athens-FF6B35?style=for-the-badge&logo=42&logoColor=white)](https://zone01.gr/)
+[![Zone01](https://img.shields.io/badge/Zone01-Athens-blue?style=for-the-badge)](https://zone01.gr/gr/)
 
 **Foundation bootcamp in Go programming.**
 
