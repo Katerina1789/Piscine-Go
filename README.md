@@ -3,7 +3,7 @@
 
 **Foundation bootcamp in Go programming.**
 
-This repository contains my work from the Go Piscine at Zone01 — an intensive, fast‑paced month designed to strengthen problem‑solving and soft skills and develop a solid understanding of programming fundamentals and 
+This repository contains my work from the Go Piscine at Zone01 — an intensive, fast‑paced month designed to strengthen problem‑solving along with soft skills and develop a solid understanding of programming fundamentals.
 
 ## Structure
 
